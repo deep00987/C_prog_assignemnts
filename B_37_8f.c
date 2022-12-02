@@ -11,11 +11,10 @@ int main(){
     
     printf("\nEnter sin value: \n");
     scanf("%lf", &x);
-
+    
     printf("\nEnter nth term: \n");
     scanf("%d", &n);
-
-
+    
     res = find_cos(x, n, res);
     printf("\nResult of cos(%lf): %lf \n", x, res);
    
