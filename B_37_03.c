@@ -28,12 +28,18 @@ int main(){
         ){
             printf("\nWord:  %d: string: %s is an article\n", i, words[i]);
             article_count++;
-        }else{
-            char_ascii = words[i][0];
-            if (char_ascii >= 65 && char_ascii <= 90){
-                printf("\nWord:  %d: string: %s is Uppercase\n", i, words[i]);
-                upper_case_counts++;
-            }
+        }
+        i++;
+    }
+    i = 0;
+    while (i < word_count){
+        //printf("\nWord:  %d: string: %s\n", i, words[i]);
+
+        char_ascii = words[i][0];
+        if (char_ascii >= 65 && char_ascii <= 90)
+        {
+            printf("\nWord:  %d: string: %s is Uppercase\n", i, words[i]);
+            upper_case_counts++;
         }
         i++;
     }
