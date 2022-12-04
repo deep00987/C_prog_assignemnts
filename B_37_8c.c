@@ -5,7 +5,7 @@ void display(int*, int);
 void permutation(int*, int, int);
 
 int main(){
-    int a[] = { 1, 2, 3};
+    int a[] = {1, 2, 3};
     int n = sizeof a / sizeof a[0];
     permutation(a, n, n);
     return 0;
