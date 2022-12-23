@@ -1,0 +1,7 @@
+Write a program to perform the following
+operations on a binary mode file storing student
+information(name, roll, marks, DOB): (1) create
+the file (2) add a new record (3) delete a record
+specified by the roll number (4) modify the marks
+of each student by adding grace marks of 10 if the
+original marks is less than 50 and greater than 40
