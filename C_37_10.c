@@ -34,7 +34,7 @@ int main(){
 
         switch(choice){
             case 1:
-                file_ptr = fopen(FILE_NAME, "a");
+                file_ptr = fopen(FILE_NAME, "ab");
                 add_new_record(file_ptr, s1);
                 break;
             case 2:
@@ -44,7 +44,7 @@ int main(){
                 delete_record_by_roll(roll);
                 break;
             case 3:
-                file_ptr = fopen(FILE_NAME, "r");
+                file_ptr = fopen(FILE_NAME, "rb");
                 modify_marks(file_ptr);
                 break;
             default:
@@ -60,10 +60,12 @@ int main(){
 
 void modify_marks(FILE* file_ptr){
     FILE *file_ptr_tmp;
-    file_ptr_tmp = fopen("./c_37_10_student_records_tmp.csv", "w");
+    file_ptr_tmp = fopen("./c_37_10_student_records_tmp.csv", "wb");
     
     if (file_ptr == NULL || file_ptr_tmp == NULL){
         printf("\nError occured opening file\n");
+        fclose(file_ptr_tmp);
+        remove("./c_37_10_student_records_tmp.csv");
         return;
     }
 
@@ -98,14 +100,7 @@ void modify_marks(FILE* file_ptr){
         strcat(line_tok, marks_str);
         strcat(line_tok, ",");
         strcat(line_tok, data[3]);
-        // strcat(line_tok, "\n");
-
-        // printf("%s ", data[0]);
-        // printf("%s ", data[1]);
-        // printf("%s ", data[2]);
-        // printf("%s ", data[3]);
-
-        // printf("\n%s", line_tok);
+        
 
         fputs(line_tok, file_ptr_tmp);
     }
@@ -119,11 +114,13 @@ void modify_marks(FILE* file_ptr){
 
 void delete_record_by_roll(int roll_no){
     FILE *file_ptr, *file_ptr_tmp;
-    file_ptr = fopen(FILE_NAME, "r");
-    file_ptr_tmp = fopen("./c_37_10_student_records_tmp.csv", "w");
+    file_ptr = fopen(FILE_NAME, "rb");
+    file_ptr_tmp = fopen("./c_37_10_student_records_tmp.csv", "wb");
     
     if (file_ptr == NULL || file_ptr_tmp == NULL){
         printf("\nError occured opening file\n");
+        fclose(file_ptr_tmp);
+        remove("./c_37_10_student_records_tmp.csv");
         return;
     }
 
