@@ -152,9 +152,6 @@ void delete_record_by_roll(int roll_no){
     rename("./c_37_10_student_records_tmp.csv", FILE_NAME);
 }
 
-
-
-
 void add_new_record(FILE *file_ptr, Student *student){
     fflush(stdin);
     char hack, buffer[MAX_BUFF_SIZE], marks_str[20], roll_str[20];
