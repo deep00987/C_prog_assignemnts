@@ -8,13 +8,13 @@ using namespace std;
 class Shape
 {
     protected:
-        double radius;
+        double area;
 };
 
 class Circle : public Shape
 {
     private:
-        double area;
+        double radius;
 
     public:
         // Constructor to set the radius of the circle
