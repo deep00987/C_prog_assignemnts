@@ -1,5 +1,5 @@
 from collections import deque
-## original example 
+# original example 
 # grid = [[0, 0, 0, 0, 1, 0, 1, 0],
 # [0, 1, 0, 1, 0, 1, 0, 1],
 # [1, 0, 1, 0, 1, 1, 1, 1],
@@ -11,22 +11,24 @@ from collections import deque
 # [1, 1, 1, 1, 1, 1, 1, 1]
 # ]
 ## sample example 2
-grid = [[0, 0, 0, 0, 1, 0, 1, 0],
-[0, 1, 0, 1, 0, 1, 0, 1],
-[1, 0, 1, 1, 1, 1, 1, 1],
-[1, 1, 1, 1, 1, 0, 0, 0],
-[1, 0, 1, 1, 1, 1, 1, 1],
-[1, 0, 1, 0, 0, 1, 1, 0],
-[0, 1, 1, 1, 1, 0, 1, 0],
-[0, 0, 0, 1, 1, 1, 0, 1],
-[1, 1, 1, 1, 1, 1, 1, 1]
-]
+# grid = [[0, 0, 0, 0, 1, 0, 1, 0],
+# [0, 1, 0, 1, 0, 1, 0, 1],
+# [1, 0, 1, 1, 1, 1, 1, 1],
+# [1, 1, 1, 1, 1, 0, 0, 0],
+# [1, 0, 1, 1, 1, 1, 1, 1],
+# [1, 0, 1, 0, 0, 1, 1, 0],
+# [0, 1, 1, 1, 1, 0, 1, 0],
+# [0, 0, 0, 1, 1, 1, 0, 1],
+# [1, 1, 1, 1, 1, 1, 1, 1]
+# ]
+grid = [[0, 0, 0, 1, 0, 1], [1, 0, 0, 1, 1, 1], [1, 1, 0, 1, 0, 1], [1, 1, 1, 1, 1, 1], [1, 1, 0, 0, 1, 1]]
+
 
 def solution(grid, rows, cols):
     reversed_grid = grid[::-1]
     max_level = [0]  
     dirs = [[0, 1, 2], [1, 0, 4], [0, -1, 2], [-1, 0, 1]]
-    cost = [[999 for _ in range(cols)] for _ in range(rows)]
+    cost = [[99999 for _ in range(cols)] for _ in range(rows)]
     visited = set()
     queue = deque()
     # print('\n'.join(['\t'.join([str(cell) for cell in row]) for row in reversed_grid]))
