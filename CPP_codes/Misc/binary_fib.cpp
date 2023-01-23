@@ -4,14 +4,14 @@ typedef unsigned long long int u_lld64;
 
 int main(){
     int N;
-    u_lld64 *arr, a, b, c;
+    u_lld64 a, b, c;
     cout << "enter the binary string length: " << endl;
     cin >> N;
-    // arr = new u_lld64[N + 1];
-    // arr[0] = 0;
-    // arr[1] = 0;
-    // arr[2] = 2;
-    // arr[3] = 2;
+    
+    if (N < 0 || N < 2){
+        cout << "Undefined !" << endl;
+        return 0;
+    }
 
     if (N < 4){
         cout << "Result: " << 2 << endl;
