@@ -1,15 +1,15 @@
 from collections import deque
-# original example 
-# grid = [[0, 0, 0, 0, 1, 0, 1, 0],
-# [0, 1, 0, 1, 0, 1, 0, 1],
-# [1, 0, 1, 0, 1, 1, 1, 1],
-# [1, 1, 1, 1, 1, 0, 1, 0],
-# [1, 0, 1, 0, 1, 1, 1, 1],
-# [1, 0, 1, 0, 0, 1, 1, 0],
-# [0, 1, 1, 1, 1, 0, 1, 0],
-# [0, 0, 0, 1, 1, 1, 0, 1],
-# [1, 1, 1, 1, 1, 1, 1, 1]
-# ]
+#original example 
+grid = [[0, 0, 0, 0, 1, 0, 1, 0],
+[0, 1, 0, 1, 0, 1, 0, 1],
+[1, 0, 1, 0, 1, 1, 1, 1],
+[1, 1, 1, 1, 1, 0, 1, 0],
+[1, 0, 1, 0, 1, 1, 1, 1],
+[1, 0, 1, 0, 0, 1, 1, 0],
+[0, 1, 1, 1, 1, 0, 1, 0],
+[0, 0, 0, 1, 1, 1, 0, 1],
+[1, 1, 1, 1, 1, 1, 1, 1]
+]
 ## sample example 2
 # grid = [[0, 0, 0, 0, 1, 0, 1, 0],
 # [0, 1, 0, 1, 0, 1, 0, 1],
@@ -21,8 +21,8 @@ from collections import deque
 # [0, 0, 0, 1, 1, 1, 0, 1],
 # [1, 1, 1, 1, 1, 1, 1, 1]
 # ]
-grid = [[0, 0, 0, 1, 0, 1], [1, 0, 0, 1, 1, 1], [1, 1, 0, 1, 0, 1], [1, 1, 1, 1, 1, 1], [1, 1, 0, 0, 1, 1]]
-
+# grid = [[0, 0, 0, 1, 0, 1], [1, 0, 0, 1, 1, 1], [1, 1, 0, 1, 0, 1], [1, 1, 1, 1, 1, 1], [1, 1, 0, 0, 1, 1]]
+# grid = [[1,1,1], [1,0,1], [0, 0, 1]]
 
 def solution(grid, rows, cols):
     reversed_grid = grid[::-1]
@@ -37,6 +37,8 @@ def solution(grid, rows, cols):
     print("Max reachable height: ", max_level[0], "Minimum cost: ", min(cost[max_level[0]]))
 
 def bfs(i, j, grid, row, col, dirs, visited, queue, cost, max_level):
+    if grid[i][j] == 0:
+        return
     queue.append((i, j))
     visited.add((i, j))
     cost[i][j] = 0
