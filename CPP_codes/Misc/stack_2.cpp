@@ -145,7 +145,7 @@ int main(){
         }
         cout << "enter element to push on the source stack(A)" << endl;
         cin >> ele;
-        A.push(ele);
+        A.minimum_push(ele);
     }
     A.display();
     towerOfHanoi(size, A, C, B, 'A', 'C', 'B');

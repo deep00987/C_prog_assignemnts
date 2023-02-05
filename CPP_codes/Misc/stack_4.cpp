@@ -244,7 +244,9 @@ int main(){
     C.display();
     cout << "Source stack(A) --" << endl;
     A.display();
+    cout << "stack avg of C: -->\n";
     C.stack_average();
+    cout << "stack avg of A: -->\n";
     A.stack_average();
     return 0;
 }
